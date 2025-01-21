@@ -51,18 +51,18 @@ CI/CD = au coeur du DevOps
 
 ### 1.2.1 Gestion des versions
 
-Versionning = gestion des versions -> essentielle pour suivre les modifications, et permet aux équipes de collaborer efficacement
+Versioning = gestion des versions -> essentielle pour suivre les modifications, et permet aux équipes de collaborer efficacement
 
-- **Git** : système de gestion de versionning **décentralisé**
-- **Subversion** (SVN) : Outil de gestion de versionning **centralisé**
-- **Mercurial** : système de gestion de versionning **distribué**
+- **Git** : gestion décentralisée
+- **Subversion (SVN)** : gestion centralisée
+- **Mercurial** : gestion distribuée
 
 ### 1.2.2 Serveurs d'intégration continue (CI)
 
 **Serveurs d'intégration continue** = systèmes automatisés jouant un rôle crucial dans le dev' logiciel moderne.
-**Fonction principale** : compilation automatique **dès qu'un commit est effectué**
+**Fonction** : compilation **automatique** après chaque commit
 
-**Les serveurs CI** : souvent des conteneurs / machines virtuelles (environnement isolé) -> garantie que l'exécution des tests est propre et contrôlée
+C'est souvent des conteneurs / machines virtuelles (environnement isolé) -> garantie que l'exécution des tests est propre et contrôlée
 
 <!-- Intégrer les liens de site officiel de chaque outil -->
 - **Jenkins** ([ici](https://www.jenkins.io/)) : outil open source de CI/CD
@@ -77,9 +77,12 @@ Versionning = gestion des versions -> essentielle pour suivre les modifications,
 
 En somme, c'est une transformation de la manière dont les logiciels sont **développés**, **testés** et **déployés**
 
-- **Spinnaker** ([ici](https://spinnaker.io/)) : outil de CI/CD pour déployer des applications en production
-- **ArgoCD** ([ici](https://argoproj.github.io/cd/)) : outil de CI/CD pour déployer des applications en production
-- **Docker** ([ici](https://www.docker.com/)) : outil de CI/CD pour déployer des applications en production
+**Fonction** : déploiement automatisé en production
+
+**Exemples** :
+- **Spinnaker** : déploiement en production
+- **ArgoCD** : déploiement en production
+- **Docker** : déploiement en production
 
 ### 1.2.4 Orchestration de conteneurs
 
@@ -88,26 +91,30 @@ Métaphore : **Orchestration** = **Orchestre** -> permet de « dupliquer » des 
 En cas d'évènement important, on peut déployer des conteneurs supplémentaires pour gérer la charge sans surcharger le serveur principal et faire continuer le service. 
 (exemple : Doctolib lors d'une pandémie)
 
-- **Docker Swarm** ([ici](https://docs.docker.com/engine/swarm/)) : outil de gestion de cluster open source (cluster = ensemble de conteneurs)
-- **Kubernetes** ([ici](https://kubernetes.io/)) : système d'orchestration de conteneurs open source
+**Fonction** : gestion et déploiement de conteneurs
+
+**Exemples** :
+- **Docker Swarm** : gestion de cluster
+- **Kubernetes** : orchestration de conteneurs
 
 ### 1.2.5 Monitoring et logging
 
 Ce sont deux aspects essentiels pour la gestion des applications, fournissant des informations sur l'état des applications et leur performance.
 
-**Monitoring** = surveillance des **performances** des applications
-**Logging** = suivi des **évènements** et **erreurs** dans les applications
+**Monitoring** : surveillance des performances
+**Logging** : suivi des événements et erreurs
 
-- **Prometheus** ([ici](https://prometheus.io/)) : outil de monitoring open source
-- **Grafana** ([ici](https://grafana.com/)) : outil de monitoring open source
-- **Elasticsearch, Logstash, Kibana (ELK)** : **suite** d'outils open source pour la gestion des logs
+**Exemples** :
+- **Prometheus** : monitoring open source
+- **Grafana** : monitoring open source
+- **ELK** : gestion des logs
 
 ### 1.2.6 Gestion de Version Sémantique (SemVer)
 
 - **SemVer** = **Semantic Versioning**
 
-Trois champs :
-- **MAJOR** : changements majeurs, **incompatibles** avec les versions précédentes
+**Champs** :
+- **MAJOR** : changements incompatibles
 - **MINOR** : ajouts de fonctionnalités
 - **PATCH** : corrections de bugs
 
@@ -127,3 +134,15 @@ L'écosystème de Github Actions englobe :
 - **Github Marketplace** : permet de trouver des actions Github, y compris pour Github Actions
 - **Github Security** : fonctionnalités de sécurité pour les dépots Github
 - **Explore** : permet de trouver des projets, collections, tendances, etc., partagés par la communauté GitHub
+
+### 2.1.2 Intégration de Github Actions
+
+Exemple de workflow : 
+- **Automatisation** : permet de lancer des actions automatiquement lors d'évènements spécifiques
+- **Déploiement Automatisé** : permet de déployer des applications en production
+- **Intégration avec GitHub Issues** : permet de suivre les problèmes et les idées des utilisateurs
+- **Sécurité et contrôle** : permet de sécuriser les dépots Github
+
+### 2.1.3 Gestion des Minutes d'Exécution
+
+- **Minutes d'exécution** : 2000 minutes gratuites par mois, facturation au-delà

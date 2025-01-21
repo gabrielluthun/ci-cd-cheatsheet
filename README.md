@@ -146,3 +146,27 @@ Exemple de workflow :
 ### 2.1.3 Gestion des Minutes d'Exécution
 
 - **Minutes d'exécution** : 2000 minutes gratuites par mois, facturation au-delà
+
+Pour contrôler son utilisation -> dashboard d'utilisation, création d'alertes, etc.
+
+## 2.2 Composants de Github Actions
+
+### 2.2.1 Configuration avec fichier YAML
+
+Pour configurer un workflow, on utilise un fichier YAML dans le dépot.
+
+Elle définit les évènements qui déclenchent le workflow, les jobs à exécuter, et les étapes à effectuer de chaque job.
+
+### 2.2.2 Les composants clés
+
+- **Workflow** : Séquence d'instructions automatisées par des évènements spécifiques **dans votre dépot Github**
+- **Jobs** : Collection de steps à exécuter dans un environnement spécifique (séquentiellement ou en parallèle)
+- **Steps** : Tâches individuelles au sein d'un job, pouvant exécuter des actions ou des commandes shell
+- **Actions** : Blocs de code réutilisables qui effectuent des tâches spécifiques (ex : checkout, build, test, deploy)
+- **Runners** : Environnement dans lequel les jobs sont exécutés
+
+
+
+### 2.2.3 Gestion des minutes d'exécution
+
+Optimiser les minutes d'exécution -> mettre en place des workflows optimisés, utiliser des runners optimisés, etc.

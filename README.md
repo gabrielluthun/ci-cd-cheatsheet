@@ -11,6 +11,8 @@
         - [1.2.5 Monitoring et logging](#125-monitoring-et-logging)
          - [1.2.6 Gestion de Version Sémantique (SemVer)](#126-gestion-de-version-sémantique-semver)
   - [2. Introduction à Github Actions](#2-introduction-à-github-actions)
+    - [2.1 Introduction](#21-introduction)
+    - [2.2 Composants de Github Actions](#22-composants-de-github-actions)
 ---
 # 1 Introduction fondamentale
 ## 1.1 Introduction à la CI/CD

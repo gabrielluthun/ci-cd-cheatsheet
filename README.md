@@ -1,7 +1,7 @@
 # GitHub Actions (CI/CD) Cheatsheet
 
 ## Table des matières
- - [1. Introduction fondamentale](#1-introduction-fondamentale)
+  - [1. Introduction fondamentale](#1-introduction-fondamentale)
     - [1.1 Introduction](#11-introduction)
     - [1.2 Les outils CI/CD](#12-les-outils-ci-cd)
         - [1.2.1 Gestion des versions](#121-gestion-des-versions)
@@ -13,6 +13,8 @@
   - [2. Introduction à Github Actions](#2-introduction-à-github-actions)
     - [2.1 Introduction](#21-introduction)
     - [2.2 Composants de Github Actions](#22-composants-de-github-actions)
+  - [3. Création d'un premier workflow](#3-création-d-un-premier-workflow)
+
 ---
 # 1 Introduction fondamentale
 ## 1.1 Introduction à la CI/CD
@@ -113,7 +115,7 @@ Ce sont deux aspects essentiels pour la gestion des applications, fournissant de
 
 ### 1.2.6 Gestion de Version Sémantique (SemVer)
 
-- **SemVer** = **Semantic Versioning**
+##### **SemVer** = **Semantic Versioning**
 
 **Champs** :
 - **MAJOR** : changements incompatibles
@@ -139,7 +141,7 @@ L'écosystème de Github Actions englobe :
 
 ### 2.1.2 Intégration de Github Actions
 
-Exemple de workflow : 
+#### Exemple de workflow : 
 - **Automatisation** : permet de lancer des actions automatiquement lors d'évènements spécifiques
 - **Déploiement Automatisé** : permet de déployer des applications en production
 - **Intégration avec GitHub Issues** : permet de suivre les problèmes et les idées des utilisateurs
@@ -172,3 +174,20 @@ Elle définit les évènements qui déclenchent le workflow, les jobs à exécut
 ### 2.2.3 Gestion des minutes d'exécution
 
 Optimiser les minutes d'exécution -> mettre en place des workflows optimisés, utiliser des runners optimisés, etc.
+
+## 3. Création d'un premier workflow
+
+Dans ce présent dépôt, on va créer un workflow qui va exécuter un script simple.
+Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/ci.yml)
+
+<details>
+<summary>Explication du fichier ci.yml</summary>
+
+`name` : nom du workflow
+`on` : évènements qui **déclenchent** le workflow
+`jobs` : collection de jobs à **exécuter**
+`build` : job à **exécuter**
+`runs-on` : **environnement** dans lequel le job est **exécuté**
+`steps` : tâches **individuelles** au sein d'un job, pouvant **exécuter** des actions ou des commandes shell
+
+</details>

@@ -13,7 +13,8 @@
   - [2. Introduction à Github Actions](#2-introduction-à-github-actions)
     - [2.1 Introduction](#21-introduction)
     - [2.2 Composants de Github Actions](#22-composants-de-github-actions)
-  - [3. Création d'un premier workflow](#3-création-d-un-premier-workflow)
+  - [3. Créer un premier workflow](#3-créer-un-premier-workflow)
+    - [3.1 Exemple de workflow](#31-exemple-de-workflow)
 
 ---
 # 1 Introduction fondamentale
@@ -175,7 +176,9 @@ Elle définit les évènements qui déclenchent le workflow, les jobs à exécut
 
 Optimiser les minutes d'exécution -> mettre en place des workflows optimisés, utiliser des runners optimisés, etc.
 
-## 3. Création d'un premier workflow
+## 3. Créer un premier workflow
+
+### 3.1 Exemple de workflow
 
 Dans ce présent dépôt, on va créer un workflow qui va exécuter un script simple.
 Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/ci.yml)
@@ -183,11 +186,11 @@ Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/c
 <details>
 <summary>Explication du fichier ci.yml</summary>
 
-`name` : nom du workflow
-`on` : évènements qui **déclenchent** le workflow
-`jobs` : collection de jobs à **exécuter**
-`build` : job à **exécuter**
-`runs-on` : **environnement** dans lequel le job est **exécuté**
-`steps` : tâches **individuelles** au sein d'un job, pouvant **exécuter** des actions ou des commandes shell
+`name` : nom du workflow  
+`on` : évènements qui **déclenchent** le workflow  
+`jobs` : collection de jobs à **exécuter**  
+`build` : job à **exécuter**  
+`runs-on` : **environnement** dans lequel le job est **exécuté**  
+`steps` : tâches **individuelles** au sein d'un job, pouvant **exécuter** des actions ou des commandes shell  
 
 </details>

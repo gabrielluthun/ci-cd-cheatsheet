@@ -1,0 +1,11 @@
+name: Exemple de Workflow CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Exécution d'un script simple
+      run: echo "Le workflow CI est déclenché par un push sur GitHub!"

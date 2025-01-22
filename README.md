@@ -15,6 +15,7 @@
     - [2.2 Composants de Github Actions](#22-composants-de-github-actions)
   - [3. Créer un premier workflow](#3-créer-un-premier-workflow)
     - [3.1 Exemple de workflow](#31-exemple-de-workflow)
+    - [3.1.1 Déclencheurs d'évènements communs (trigger)](#311-déclencheurs-dévènements-communs-trigger)
 
 ---
 # 1 Introduction fondamentale
@@ -178,7 +179,7 @@ Optimiser les minutes d'exécution -> mettre en place des workflows optimisés, 
 
 ## 3. Créer un premier workflow
 
-### 3.1 Exemple de workflow
+## 3.1 Exemple de workflow
 
 Dans ce présent dépôt, on va créer un workflow qui va exécuter un script simple.
 Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/ci.yml)
@@ -195,7 +196,7 @@ Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/c
 
 </details>
 
-### 3.2 Déclencheurs d'évènements communs (trigger)
+### 3.1.1 Déclencheurs d'évènements communs (trigger)
 
 Les workflows sont déclenchés par des évènements spécifiques.
 En voici quelques exemples :
@@ -214,3 +215,25 @@ on:
     - cron: '0 0 * * *'
 ```
 Ici, le workflow sera déclenché chaque jour à 00:00.
+
+## 3.2 Les triggers dans Github Actions
+
+Github Actions permet de déclencher des workflows en fonction d'évènements spécifiques.
+
+Voilà les triggers disponibles :
+
+- **Push** 
+  - Syntaxe : `on: push: [branches]`
+  - Description : Déclenche le workflow lorsqu'un commit est **pushé** sur le dépot
+- **Pull Request**
+  - Syntaxe : `on: pull_request: [branches]`
+  - Description : Déclenche le workflow lorsqu'un **pull request** est créé ou modifié
+- **Schedule**
+  - Syntaxe : `on: schedule:`
+  - Description : Déclenche le workflow à une heure **spécifique**, en utilisant un `cron`
+- **Workflow Dispatch**
+  - Syntaxe : `on: workflow_dispatch`
+  - Description : Déclenche le workflow **manuellement**, offrant une flexibilité
+
+
+Un exemple de trigger est disponible : [exemple-trigger.yml](.github/workflows/exemple-trigger.yml)

@@ -283,6 +283,36 @@ jobs:
 
  La gestion des jobs dans un workflow repose sur 2 concepts clés : la **dépendance entre jobs** et la **parallélisation**
  - **Dépendance entre jobs** : permet de définir un ordre de déclenchement des jobs, ce qui garantit que les tâches sont exécutées dans une **séquence** logique 
- 
+
  - **Parallélisation** : optimise le temps d'exécution du workflow en exécutant simultanément des jobs en **parallèle**
 
+---
+# 5. Les Secrets dans Github Actions
+
+## 5.1 Gestion des Secrets
+
+### 5.1.1 Découverte d'un secret
+
+#### Définition
+Un secret est une information **sensible** qui doit être **protégée**, comme des clés API, des mots de passe, un jeton d'accès, une clé SSH, etc.
+
+#### Pourquoi les utiliser ?
+
+Les secrets sont utilisés pour : 
+- Protéger vos données sensibles contre les expositions accidentelles
+- Séparer les informations de configuration
+- Permettre une modification et gestion centrélisée des données, sans changer le code source
+
+
+### 5.1.2 L'utilisation pratique des secrets
+
+- Exemple de fichier de workflow comme `deploy.yml`, qui utilise un secret pour accéder à un service externe
+
+- `appleboy/ssh-action` : action GitHub qui permet d'établir une connexion SSH à un serveur distant de façon sécurisée
+-> Facilite l'automatisation des déploiements
+
+
+### 5.1.3 Le script `deploy.sh`
+
+- Un script shell côté serveur qui contient les commandes nécessaires pour mettre à jour et redémarrer l'application
+- Script invoqué dans Github Actions, démontrant comment les tâches peuvent être **automatisées**

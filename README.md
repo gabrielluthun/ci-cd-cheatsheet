@@ -16,7 +16,16 @@
   - [3. Créer un premier workflow](#3-créer-un-premier-workflow)
     - [3.1 Exemple de workflow](#31-exemple-de-workflow)
     - [3.1.1 Déclencheurs d'évènements communs (trigger)](#311-déclencheurs-dévènements-communs-trigger)
-
+- [4. Les actions dans Github Marketplace](#4-les-actions-dans-github-marketplace)
+  - [4.1 Découvrir des actions](#41-découvrir-des-actions)
+  - [4.2 Créer un workflow avec une action](#42-créer-un-workflow-avec-une-action)
+- [5. Les Secrets dans Github Actions](#5-les-secrets-dans-github-actions)
+  - [5.1 Gestion des Secrets](#51-gestion-des-secrets)
+  - [5.1.1 Découverte d'un secret](#511-découverte-d'un-secret)
+  - [5.1.2 L'utilisation pratique des secrets](#512-l'utilisation-pratique-des-secrets)
+  - [5.1.3 Le script `deploy.sh`](#513-le-script-deploysh)
+- [6. Stratégies de déploiement](#6-stratégies-de-déploiement)
+  - [6.1 Les différentes stratégies de déploiement](#61-les-différentes-stratégies-de-déploiement)
 ---
 # 1 Introduction fondamentale
 ## 1.1 Introduction à la CI/CD

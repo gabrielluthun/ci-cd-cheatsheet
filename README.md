@@ -237,3 +237,52 @@ Voilà les triggers disponibles :
 
 
 Un exemple de trigger est disponible : [exemple-trigger.yml](.github/workflows/exemple-trigger.yml)
+
+
+## 4. Les actions dans Github Marketplace
+
+### 4.1 Découvrir des actions
+Github Marketplace est une plateforme qui permet de trouver des outils, y compris pour Github Actions.
+
+Conseils principal pour trouver des actions : utiliser la barre de recherche comme un guide
+-> Taper des mots clés relatifs à ce que l'on souhaite automatiser
+-> Explorer les options disponibles
+
+### 4.1.1 Sélectionner la meilleure action
+- Regardez les **étoiles** et **commentaires** pour savoir si l'action est populaire et fiable : ce sont des indices précieux
+- Vérifiez que l'action est **compatible** 
+
+### 4.2 Créer un workflow avec une action
+
+Imaginons que l'on souhaite créer un workflow qui va établir une chaîne de montage automatisée de test d'application
+Voici la « recette » :
+1. **Définir les déclencheurs avec `name: <action-name>` et `on: <trigger>`**
+
+De façon "non-initié", on dit : *"Chaque fois que quelque chose est pushé sur le dépot, exécuter le workflow"*
+
+2. **Ajouter les outils (Actions) à la chaîne** :
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm test
+```
+   Dans cet exemple :
+    - `actions/checkout@v2` vous permet de **cloner** votre code sur le serveur qui exécutera le workflow.
+    - `actions/setup-node@v2` **prépare** l'environnement pour Node.js.
+    - `npm install` et `npm test` sont vos commandes pour **assembler et tester** le produit.
+
+  ### 4.3 Gestion et parallélisation des jobs
+
+ La gestion des jobs dans un workflow repose sur 2 concepts clés : la **dépendance entre jobs** et la **parallélisation**
+ - **Dépendance entre jobs** : permet de définir un ordre de déclenchement des jobs, ce qui garantit que les tâches sont exécutées dans une **séquence** logique 
+ 
+ - **Parallélisation** : optimise le temps d'exécution du workflow en exécutant simultanément des jobs en **parallèle**
+

@@ -194,3 +194,23 @@ Le dossier `.github/workflows/` contient le fichier [ci.yml](.github/workflows/c
 `steps` : tâches **individuelles** au sein d'un job, pouvant **exécuter** des actions ou des commandes shell  
 
 </details>
+
+### 3.2 Déclencheurs d'évènements communs (trigger)
+
+Les workflows sont déclenchés par des évènements spécifiques.
+En voici quelques exemples :
+
+- **Push** : déclenche le workflow lorsqu'un commit est pushé sur le dépot
+- **Pull Request** : déclenche le workflow lorsqu'un pull request est créé ou modifié
+- **Schedule** : Planifie le workflow à une heure spécifique en utilisant un `cron`
+- **Cron** : déclenche le workflow à une heure spécifique
+
+
+Exemple de trigger avec `schedule` :
+
+```yaml
+on:
+  schedule:
+    - cron: '0 0 * * *'
+```
+Ici, le workflow sera déclenché chaque jour à 00:00.

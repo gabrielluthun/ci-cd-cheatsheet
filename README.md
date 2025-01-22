@@ -316,3 +316,16 @@ Les secrets sont utilisés pour :
 
 - Un script shell côté serveur qui contient les commandes nécessaires pour mettre à jour et redémarrer l'application
 - Script invoqué dans Github Actions, démontrant comment les tâches peuvent être **automatisées**
+---
+# 6. Stratégies de déploiement
+
+## 6.1 Les différentes stratégies de déploiement
+
+- **Déploiement Blue/Green** : implique d'avoir 2 environnement de production identique mais actifs de manière exclusive
+-> L'un en ligne (bleu), l'autre mise à jour et testé (vert)
+
+- **Déploiement Canary**: permet de déployer des changements à un petit groupe d'utilisateurs avant de les rendre disponibles à tous
+
+- **Déploiement Rolling** : maintient le service disponible en mettant à jour les serveurs un par un
+
+- **Direct VPS** : Convient aux petits projets, permet des mises à jour directes sur un VPS à chaque push

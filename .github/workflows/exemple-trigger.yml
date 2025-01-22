@@ -1,0 +1,14 @@
+name: Mon Workflow CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: echo "Workflow exécuté suite à un push ou une pull request sur la branche main."

@@ -332,3 +332,31 @@ Les secrets sont utilisés pour :
 - **Déploiement Rolling** : maintient le service disponible en mettant à jour les serveurs un par un
 
 - **Direct VPS** : Convient aux petits projets, permet des mises à jour directes sur un VPS à chaque push
+
+## 6.2 Déploiement via Github Actions
+
+**Étapes clés** :
+1. **Préparation du VPS** : configuration SSH (`./ssh/authorized_keys`) et renforcement de la sécurité en configurant `Fail2Ban`  
+2. **Configuration des Secrets GitHub** : Sécurisation des informations sensibles (clé SSH privée, détails de connexion au serveur, etc.)  
+3. **Création du Workflow** : Mise en place du workflow automatisé, qui servira à exécuter le déploiement à chaque push sur la branche `main`  
+4. **Adoption des Best Practices de Sécurité** : en plus des Secrets, utilisation de clés SSH dédiés, changement du port SSH par défaut, mise en place d'une surveillance de l'application post-déploiement  
+
+## 6.3 Déploiement via Docker
+
+Se fait généralement en deux phases : **construction de l'image** et **son déploiement**
+
+### 6.3.1 Construction de l'image
+
+1. Définition du Dockerfile : créer un Dockerfile décrivant l'environnement du projet
+2. Construire l'image dans GitHub Actions : utiliser 1 étape dans notre workflow en utilisant `docker build`
+
+### 6.3.2 Déploiement de l'image
+
+1. **Push de l'image sur un registre de conteneurs** : utiliser `docker push` (Docker Hub, ou autre registre de conteneurs)
+2. **Déploiement sur le Serveur** : configuration du serveur pour récupérer l'image et la lancer, en utilisant des Secrets GitHub
+
+### 6.3.3 Bonnes pratiques
+
+- **Sécurisation des Secrets** : stocker les informations d'authentification dans les Secrets GitHub
+- **Gestion des tags** : utiliser des tags pour gérer les différentes versions de l'image
+- **Automatisation des tests** : intégration des tests dans le workflow pour vérifier la validité de l'image avant de la déployer

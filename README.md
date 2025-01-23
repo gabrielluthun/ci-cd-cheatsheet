@@ -20,6 +20,8 @@
   - [5.1.3 Le script `deploy.sh`](#513-le-script-deploysh)
 - [6. Stratégies de déploiement](#6-stratégies-de-déploiement)
   - [6.1 Les différentes stratégies de déploiement](#61-les-différentes-stratégies-de-déploiement)
+  - [6.2 Déploiement via Github Actions](#62-déploiement-via-github-actions)
+  - [6.3 Déploiement via Docker](#63-déploiement-via-docker)
 ---
 # 1 Introduction fondamentale
 ## 1.1 Introduction à la CI/CD
